@@ -1,4 +1,4 @@
-# G2L-Project Group G2L-
+# G2L
 
 Health Tracker
 
