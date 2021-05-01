@@ -1,8 +1,3 @@
-/**
-* This class contains various properties of the related medicine. It is mainly used by pharmacists to keep track of their stocks.
-* @author Umut Divarcı
-* @date 23.04.2021  
-*/
 
 public class Medicine {
 
@@ -21,12 +16,6 @@ public class Medicine {
         this.stock = stock;
     }
 
-    
-    /** 
-     * Adds a certain amount of stocks of the medicine to records.
-     * @param newStock
-     */
-
     // Methods
 
     protected void addStock( int newStock)
@@ -34,21 +23,11 @@ public class Medicine {
         stock = stock + newStock;
     }
 
-    
-    /** 
-     * Removes a certain amount of stocks of the medicine from records.
-     * @param usedStock
-     */
     protected void removeStock( int usedStock)
     {
         stock = stock - usedStock;
     }
 
-    
-    /** 
-     * Sets a new price for the medicine.
-     * @param newPrice
-     */
     protected void setPrice( double newPrice)
     {
         price = newPrice;

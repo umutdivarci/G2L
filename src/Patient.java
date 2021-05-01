@@ -1,6 +1,4 @@
-
 import java.util.ArrayList;
-
 class Patient extends Account {
 
     //Variables specific to patient class
@@ -9,10 +7,11 @@ class Patient extends Account {
     String currentCity;
     String name;
     String surname;
-    ArrayList <Date> calendar;
+    Date date;
+    MedicalRecord diet;
 
     Patient( String userName, String password, String mail, int identityNumber,  MedicalRecord medicalRecords,
-    String currentCity, String name, String surname, ArrayList <Date> calendar){
+    String currentCity, String name, String surname){
 
         super(userName, password, mail);
         this.identityNumber = identityNumber;
@@ -20,7 +19,7 @@ class Patient extends Account {
         this.currentCity = currentCity;
         this.name = name;
         this.surname = surname;
-        this.calendar = calendar;
+        date = new Date();
 
     }
 
@@ -44,4 +43,36 @@ class Patient extends Account {
         currentCity = newCity;
     }
 
+    protected String getName(){
+        return name;
+    }
+
+    protected String getSurname(){
+        return surname;
+    }
+
+    protected void generateDietaryProgram(MedicalRecord record){
+        //to do
+    }
+
+    protected String displayDietaryPlan(){
+        return diet.toString();
+    }
+
+    protected boolean getAppointment(int date, Doctor doctor){
+        if (doctor.getAvailability(date) && getAvailabe(date)) {
+
+            doctor.getSchedule().getDay(date).setAvailabilityFalse();
+            doctor.setAppointment(date);
+            this.date.getDay(date).setAvailabilityFalse();
+            this.date.getDay(date).setNote(1);
+            return true;
+        }
+        return false;
+    }
+
+    protected boolean getAvailabe(int i){
+
+        return date.getDay(i).getAvailability();
+    }
 }
