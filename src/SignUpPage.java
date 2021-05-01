@@ -27,13 +27,13 @@ public class SignUpPage extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField txtPassword;
 	private JTextField txtEmail;
 	private JTextField txtUsername;
 	private JTextField txtIdentityNo;
 	private JTextField txtSignUp;
 	private JTextField txtAlreadyHaveAn;
-	private JPasswordField passwordField;
+	private JPasswordField enterPassword;
 
 	/**
 	 * Launch the application.
@@ -68,41 +68,29 @@ public class SignUpPage extends JFrame {
 		contentPane.setLayout(null);
 		
 		
-		JFormattedTextField frmtdtxtfldEnterUsernameHere = new JFormattedTextField();
-		frmtdtxtfldEnterUsernameHere.setHorizontalAlignment(SwingConstants.LEFT);
-		frmtdtxtfldEnterUsernameHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		frmtdtxtfldEnterUsernameHere.setBounds(232, 135, 202, 30);
-		contentPane.add(frmtdtxtfldEnterUsernameHere);
+		JFormattedTextField enterUsername = new JFormattedTextField();
+		enterUsername.setHorizontalAlignment(SwingConstants.LEFT);
+		enterUsername.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		enterUsername.setBounds(232, 135, 202, 30);
+		contentPane.add(enterUsername);
 		
-		JButton btnNewButton = new JButton("Confirm");
-		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton.setForeground(Color.WHITE);
-		btnNewButton.setBackground(new Color(46, 139, 87));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton.setBounds(292, 313, 90, 30);
-		contentPane.add(btnNewButton);
+		JFormattedTextField enterEmail = new JFormattedTextField();
+		enterEmail.setHorizontalAlignment(SwingConstants.LEFT);
+		enterEmail.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		enterEmail.setBounds(232, 195, 202, 30);
+		contentPane.add(enterEmail);
 		
-		JFormattedTextField frmtdtxtfldEnterUsernameHere_1 = new JFormattedTextField();
-		frmtdtxtfldEnterUsernameHere_1.setHorizontalAlignment(SwingConstants.LEFT);
-		frmtdtxtfldEnterUsernameHere_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		frmtdtxtfldEnterUsernameHere_1.setBounds(232, 195, 202, 30);
-		contentPane.add(frmtdtxtfldEnterUsernameHere_1);
-		
-		textField = new JTextField();
-		textField.setText("Password:");
-		textField.setOpaque(false);
-		textField.setForeground(Color.WHITE);
-		textField.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textField.setEditable(false);
-		textField.setColumns(10);
-		textField.setBorder(null);
-		textField.setBackground(Color.BLACK);
-		textField.setBounds(142, 255, 110, 19);
-		contentPane.add(textField);
+		txtPassword = new JTextField();
+		txtPassword.setText("Password:");
+		txtPassword.setOpaque(false);
+		txtPassword.setForeground(Color.WHITE);
+		txtPassword.setFont(new Font("Tahoma", Font.BOLD, 11));
+		txtPassword.setEditable(false);
+		txtPassword.setColumns(10);
+		txtPassword.setBorder(null);
+		txtPassword.setBackground(Color.BLACK);
+		txtPassword.setBounds(142, 255, 110, 19);
+		contentPane.add(txtPassword);
 		
 		txtEmail = new JTextField();
 		txtEmail.setText("E-mail:");
@@ -128,11 +116,11 @@ public class SignUpPage extends JFrame {
 		txtUsername.setBounds(142, 142, 110, 19);
 		contentPane.add(txtUsername);
 		
-		JFormattedTextField frmtdtxtfldEnterUsernameHere_2 = new JFormattedTextField();
-		frmtdtxtfldEnterUsernameHere_2.setHorizontalAlignment(SwingConstants.LEFT);
-		frmtdtxtfldEnterUsernameHere_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		frmtdtxtfldEnterUsernameHere_2.setBounds(232, 84, 202, 30);
-		contentPane.add(frmtdtxtfldEnterUsernameHere_2);
+		JFormattedTextField enterID = new JFormattedTextField();
+		enterID.setHorizontalAlignment(SwingConstants.LEFT);
+		enterID.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		enterID.setBounds(232, 84, 202, 30);
+		contentPane.add(enterID);
 		
 		txtIdentityNo = new JTextField();
 		txtIdentityNo.setText("Identity No:");
@@ -153,32 +141,32 @@ public class SignUpPage extends JFrame {
 		txtSignUp.setHorizontalAlignment(SwingConstants.CENTER);
 		txtSignUp.setFont(new Font("Tahoma", Font.BOLD, 20));
 		txtSignUp.setText("Sign Up");
-		txtSignUp.setBackground(new Color(46, 139, 87));
+		txtSignUp.setBackground(new Color(34, 139, 34));
 		txtSignUp.setBounds(0, 22, 655, 38);
 		contentPane.add(txtSignUp);
 		txtSignUp.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
+		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		lblNewLabel_1.setOpaque(true);
-		lblNewLabel_1.setBackground(new Color(46, 139, 87));
+		lblNewLabel_1.setBackground(new Color(34, 139, 34));
 		lblNewLabel_1.setForeground(new Color(46, 139, 87));
 		lblNewLabel_1.setBounds(0, 560, 655, 38);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("New label");
+		JLabel lblNewLabel_1_1 = new JLabel("");
 		lblNewLabel_1_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		lblNewLabel_1_1.setOpaque(true);
 		lblNewLabel_1_1.setForeground(new Color(46, 139, 87));
-		lblNewLabel_1_1.setBackground(new Color(46, 139, 87));
+		lblNewLabel_1_1.setBackground(new Color(34, 139, 34));
 		lblNewLabel_1_1.setBounds(22, -17, 37, 692);
 		contentPane.add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_1_1_1 = new JLabel("New label");
+		JLabel lblNewLabel_1_1_1 = new JLabel("");
 		lblNewLabel_1_1_1.setOpaque(true);
 		lblNewLabel_1_1_1.setForeground(new Color(46, 139, 87));
 		lblNewLabel_1_1_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		lblNewLabel_1_1_1.setBackground(new Color(46, 139, 87));
+		lblNewLabel_1_1_1.setBackground(new Color(34, 139, 34));
 		lblNewLabel_1_1_1.setBounds(590, -17, 37, 692);
 		contentPane.add(lblNewLabel_1_1_1);
 		
@@ -193,7 +181,7 @@ public class SignUpPage extends JFrame {
 		contentPane.add(btnLogInHere);
 		btnLogInHere.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					MainPage frame = new MainPage();
+					LogInPage frame = new LogInPage();
 					frame.setVisible(true);
 					Window win = SwingUtilities.getWindowAncestor(contentPane);
 					win.dispose();
@@ -212,9 +200,23 @@ public class SignUpPage extends JFrame {
 		txtAlreadyHaveAn.setBounds(203, 367, 220, 19);
 		contentPane.add(txtAlreadyHaveAn);
 		
-		passwordField = new JPasswordField();
-		passwordField.setToolTipText("");
-		passwordField.setBounds(232, 250, 202, 30);
-		contentPane.add(passwordField);
+		enterPassword = new JPasswordField();
+		enterPassword.setToolTipText("");
+		enterPassword.setBounds(232, 250, 202, 30);
+		contentPane.add(enterPassword);
+		
+		JButton btnNewButton = new JButton("Confirm");
+		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setBackground(new Color(34, 139, 34));
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Create new account. TO DO save the account information.
+				Account account = new Account( enterUsername.getText(), enterPassword.getText(), enterEmail.getText());
+			}
+		});
+		btnNewButton.setBounds(292, 313, 90, 30);
+		contentPane.add(btnNewButton);
 	}
 }
