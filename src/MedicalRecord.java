@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Implementing the medical record class for patients

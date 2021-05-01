@@ -89,7 +89,7 @@ public class LogInPage extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if ( frmtdtxtfldEnterUsernameHere.getText().equals(account.userName) && passwordField_1.getText().equals(account.password))
 				{
-					PatientMainPage frame = new PatientMainPage();
+					PatientMainPage frame = new PatientMainPage(); //add account parameter
 					frame.setVisible(true);
 					Window win = SwingUtilities.getWindowAncestor(contentPane);
 					win.dispose();
