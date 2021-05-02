@@ -13,15 +13,14 @@ class Doctor extends Account{
 
     // Constructors
     Doctor ( String userName, String password, String mail, String name, long identityNumber,
-     Hospital currentHospital, double salary)
+     Hospital currentHospital)
     {
         super ( userName, password, mail);
         schedule = new Date();
         this.name = name;
         this.identityNumber = identityNumber;
-        this.patients = patients;
         this.currentHospital = currentHospital;
-        this.salary = salary;
+        this.salary = null;
         patients = new ArrayList<String>();
     }
 
