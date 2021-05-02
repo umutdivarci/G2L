@@ -63,8 +63,20 @@ class Patient extends Account {
 
             doctor.getSchedule().getDay(date).setAvailabilityFalse();
             doctor.setAppointment(date);
-            this.date.getDay(date).setAvailabilityFalse();
-            this.date.getDay(date).setNote(1);
+            this.date.getDay(date - 1).setAvailabilityFalse();
+            this.date.getDay(date - 1).setNote(1);
+            return true;
+        }
+        return false;
+    }
+    //@overload
+    protected boolean getAppointment(int date, Doctor doctor, String s){
+        if (doctor.getAvailability(date) && getAvailabe(date)) {
+
+            doctor.getSchedule().getDay(date).setAvailabilityFalse();
+            doctor.setAppointment(date);
+            this.date.getDay(date - 1).setAvailabilityFalse( s);
+            //this.date.getDay(date - 1).setNote(1);
             return true;
         }
         return false;

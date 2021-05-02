@@ -50,7 +50,7 @@ public class HospitalMainPage extends JFrame {
 	 * Create the frame.
 	 */
 	public HospitalMainPage( Hospital hospital) {
-		Account account = new Account( "umutdivarci", "12345", "umut@hotmail.com");
+		//Account account = new Account( "umutdivarci", "12345", "umut@hotmail.com");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1133, 657);
@@ -93,61 +93,7 @@ public class HospitalMainPage extends JFrame {
 		lblNewLabel_2.setBounds(0, 555, 1119, 38);
 		contentPane.add(lblNewLabel_2);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setEditable(true);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Doctors", "Nurses", "Secretaries", "Other Employees"}));
-		comboBox.setFont(new Font("Tahoma", Font.BOLD, 15));
-		comboBox.setBackground(new Color(34, 139, 34));
-		comboBox.setForeground(Color.WHITE);
-		comboBox.setToolTipText("");
-		comboBox.setBounds(87, 292, 220, 48);
-		comboBox.setSelectedItem("Hospital Staff");
-		comboBox.setEditable(false);
-		
-        ActionListener cbActionListener = new ActionListener() {//add actionlistner to listen for change
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-                String s = (String) comboBox.getSelectedItem();//get the selected item
-
-                switch (s) {//check for a match
-                    case "Doctors":
-        				PatientSignUpPage frame1 = new PatientSignUpPage();
-        				frame1.setVisible(true);
-        				Window win1 = SwingUtilities.getWindowAncestor(contentPane);
-        				win1.dispose();
-                        break;
-                        
-                    case "Nurses":
-        				PatientSignUpPage frame2 = new PatientSignUpPage();
-        				frame2.setVisible(true);
-        				Window win2 = SwingUtilities.getWindowAncestor(contentPane);
-        				win2.dispose();
-                        break;
-                        
-                    case "Secretaries":
-        				PatientSignUpPage frame3 = new PatientSignUpPage();
-        				frame3.setVisible(true);
-        				Window win3 = SwingUtilities.getWindowAncestor(contentPane);
-        				win3.dispose();
-                        break;
-                        
-                    case "Other Employees":
-        				PatientSignUpPage frame4 = new PatientSignUpPage();
-        				frame4.setVisible(true);
-        				Window win4 = SwingUtilities.getWindowAncestor(contentPane);
-        				win4.dispose();
-                        break;
-                        
-                    default:
-                        break;
-           
-                }
-            }
-        };
-        comboBox.addActionListener(cbActionListener);
-		contentPane.add(comboBox);
-		
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setEditable(true);
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Hospital Records", "Available Resources", "Current Patients", "Laboratories"}));
@@ -155,7 +101,7 @@ public class HospitalMainPage extends JFrame {
 		comboBox_1.setForeground(Color.WHITE);
 		comboBox_1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		comboBox_1.setBackground(new Color(34, 139, 34));
-		comboBox_1.setBounds(347, 292, 204, 48);
+		comboBox_1.setBounds(344, 292, 204, 48);
 		comboBox_1.setSelectedItem("Hospital Data");
 		comboBox_1.setEditable(false);
 		
@@ -167,7 +113,7 @@ public class HospitalMainPage extends JFrame {
 
                 switch (s) {//check for a match
                     case "Hospital Records":
-        				PatientSignUpPage frame1 = new PatientSignUpPage();
+        				HospitalRecordsPage frame1 = new HospitalRecordsPage(hospital);
         				frame1.setVisible(true);
         				Window win1 = SwingUtilities.getWindowAncestor(contentPane);
         				win1.dispose();
@@ -312,7 +258,7 @@ public class HospitalMainPage extends JFrame {
 		txtUmutDivarc.setForeground(Color.WHITE);
 		txtUmutDivarc.setOpaque(false);
 		txtUmutDivarc.setEditable(false);
-		txtUmutDivarc.setText("Ankara Hospital");
+		txtUmutDivarc.setText(hospital.getHospitalName());
 		txtUmutDivarc.setBounds(265, 139, 158, 38);
 		contentPane.add(txtUmutDivarc);
 		txtUmutDivarc.setColumns(10);
@@ -338,6 +284,21 @@ public class HospitalMainPage extends JFrame {
 		lblNewLabel_3.setBackground(Color.WHITE);
 		lblNewLabel_3.setBounds(870, 84, 150, 150);
 		contentPane.add(lblNewLabel_3);
+		
+		JButton btnNewButton_1 = new JButton("Hospital Employees");
+		btnNewButton_1.setForeground(Color.WHITE);
+		btnNewButton_1.setBackground(new Color(34, 139, 34));
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_1.setBounds(109, 292, 204, 49);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EmployeesPage frame = new EmployeesPage(hospital);
+				frame.setVisible(true);
+				Window win = SwingUtilities.getWindowAncestor(contentPane);
+				win.dispose();
+			}
+		});
+		contentPane.add(btnNewButton_1);
 		
 	}
 }

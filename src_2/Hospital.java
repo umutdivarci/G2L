@@ -11,14 +11,14 @@ public class Hospital extends Account
     // Declare properties
     private String hospitalName;
     private String hospitalLocation;
-    private ArrayList<Employee> doctors;
-    private ArrayList<Employee> nurses;
-    private ArrayList<Employee> secretaries;
-    private ArrayList<Employee> otherEmployees;
-    private ArrayList<String> hospitalRecords;
-    private ArrayList<String> availableResources;
-    private ArrayList<String> currentPatients;
-    private ArrayList<String> laboratories;
+    protected ArrayList<Doctor> doctors;
+    protected ArrayList<Employee> nurses;
+    protected ArrayList<Employee> secretaries;
+    protected ArrayList<Employee> otherEmployees;
+    protected ArrayList<String> hospitalRecords;
+    protected ArrayList<String> availableResources;
+    protected ArrayList<String> currentPatients;
+    protected ArrayList<String> laboratories;
 
     
     /**
@@ -31,7 +31,7 @@ public class Hospital extends Account
         super(username, password, mail);
         this.hospitalName = hospitalName;
         this.hospitalLocation = hospitalLocation;
-        doctors = new ArrayList<Employee>();
+        doctors = new ArrayList<Doctor>();
         nurses = new ArrayList<Employee>();
         secretaries = new ArrayList<Employee>();
         otherEmployees = new ArrayList<Employee>();
@@ -55,6 +55,10 @@ public class Hospital extends Account
     {   
     }   
     
+    public String getHospitalName()
+    {
+    	return hospitalName;
+    }
     @Override
     public String toString()
     {

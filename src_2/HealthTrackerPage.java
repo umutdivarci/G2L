@@ -8,11 +8,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Window;
 import java.awt.FlowLayout;
 import javax.swing.JTable;
 import javax.swing.border.BevelBorder;
@@ -20,6 +22,8 @@ import javax.swing.border.MatteBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+
 import java.awt.Font;
 
 public class HealthTrackerPage extends JFrame {
@@ -63,7 +67,7 @@ public class HealthTrackerPage extends JFrame {
 		getContentPane().setLayout(null);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 669, 657);
+		setBounds(100, 100, 671, 657);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new LineBorder(Color.BLACK, 1, true));
@@ -123,6 +127,27 @@ public class HealthTrackerPage extends JFrame {
 		txtThisCalendarDisplays.setEditable(false);
 		txtThisCalendarDisplays.setBounds(122, 500, 414, 38);
 		contentPane.add(txtThisCalendarDisplays);
+		
+		JButton btnSignUpHere = new JButton("");
+		btnSignUpHere.setIcon(new ImageIcon(VaccinationPage.class.getResource("/icons/809922_arrows_512x512_55x55.png")));
+		btnSignUpHere.setHorizontalAlignment(SwingConstants.LEFT);
+		btnSignUpHere.setBorder(null);
+		btnSignUpHere.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+					PatientMainPage frame = new PatientMainPage(patient);
+					frame.setVisible(true);
+					Window win = SwingUtilities.getWindowAncestor(contentPane);
+					win.dispose();
+			}
+		});
+		btnSignUpHere.setOpaque(false);
+		btnSignUpHere.setForeground(Color.BLUE);
+		btnSignUpHere.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnSignUpHere.setBackground(Color.WHITE);
+		btnSignUpHere.setBounds(80, 129, 55, 55);
+		contentPane.add(btnSignUpHere);
+		
 		
 		
 		int counter = 0;

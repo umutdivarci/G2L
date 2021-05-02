@@ -41,6 +41,11 @@ public class Employee
     {
         return employee.currentPatients;
     }
+    
+    public String getName()
+    {
+    	return name;
+    }
 
     /**
      * Method which updates the information of an employee

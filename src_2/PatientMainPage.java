@@ -19,6 +19,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.MatteBorder;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
@@ -121,21 +123,21 @@ public class PatientMainPage extends JFrame {
                         break;
                         
                     case "My Medical Records":
-        				PatientSignUpPage frame2 = new PatientSignUpPage();
+        				MedicalRecordsPage frame2 = new MedicalRecordsPage(patient);
         				frame2.setVisible(true);
         				Window win2 = SwingUtilities.getWindowAncestor(contentPane);
         				win2.dispose();
                         break;
                         
                     case "Quarantine Status":
-        				PatientSignUpPage frame3 = new PatientSignUpPage();
+        				VaccinationPage frame3 = new VaccinationPage(patient);
         				frame3.setVisible(true);
         				Window win3 = SwingUtilities.getWindowAncestor(contentPane);
         				win3.dispose();
                         break;
                         
                     case "My Dietary Plan":
-        				PatientSignUpPage frame4 = new PatientSignUpPage();
+                    	PatientSignUpPage frame4 = new PatientSignUpPage();
         				frame4.setVisible(true);
         				Window win4 = SwingUtilities.getWindowAncestor(contentPane);
         				win4.dispose();

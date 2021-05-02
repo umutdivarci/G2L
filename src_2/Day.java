@@ -63,7 +63,7 @@ public class Day {
         protected void setAvailabilityFalse( String s){
 
             available = false;
-            setNote(s);
+            this.note = s;
         }
 
 

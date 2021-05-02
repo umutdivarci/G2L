@@ -34,7 +34,7 @@ public class EmployeesGUI
 		header.setForeground( new Color( 0, 51, 204));
 		header.setFont( new Font( "Times New Roman", Font.BOLD, 44));
 		header.setHorizontalAlignment( SwingConstants.CENTER);
-		header.setBounds( 39, 10, 337, 93);
+		header.setBounds( 25, 10, 337, 93);
 		header.setBorder( BorderFactory.createLineBorder( Color.BLACK));
 		frame.getContentPane().add( header);
 		

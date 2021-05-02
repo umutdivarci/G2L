@@ -33,11 +33,12 @@ public class PharmacyMainPage extends JFrame {
 	 * Launch the application.
 	 */
 	
-	/*
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					Pharmacy pharmacy = new Pharmacy ("title", "title", "title", "title", "title");
 					PharmacyMainPage frame = new PharmacyMainPage(pharmacy);
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -46,7 +47,7 @@ public class PharmacyMainPage extends JFrame {
 			}
 		});
 	}
-	*/
+	
 
 	/**
 	 * Create the frame.
@@ -97,7 +98,7 @@ public class PharmacyMainPage extends JFrame {
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setEditable(true);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {" Pharmacists", " Other Employees"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Pharmacists", "Other Employees"}));
 		comboBox.setFont(new Font("Tahoma", Font.BOLD, 15));
 		comboBox.setBackground(new Color(34, 139, 34));
 		comboBox.setForeground(Color.WHITE);
@@ -105,6 +106,32 @@ public class PharmacyMainPage extends JFrame {
 		comboBox.setBounds(87, 292, 220, 48);
 		comboBox.setSelectedItem("Pharmacy Staff");
 		comboBox.setEditable(false);
+		ActionListener cbActionListener = new ActionListener() {//add action listener to listen for change
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String s = (String) comboBox.getSelectedItem();//get the selected item
+
+                switch (s) {//check for a match
+                    case "Pharmacists":
+        				ContactUsPage frame1 = new ContactUsPage(pharmacy);
+        				frame1.setVisible(true);
+        				Window win1 = SwingUtilities.getWindowAncestor(contentPane);
+        				win1.dispose();
+                        break;
+                        
+                    case "Other Employees":
+        				HowToUsePage frame2 = new HowToUsePage(pharmacy);
+        				frame2.setVisible(true);
+        				Window win2 = SwingUtilities.getWindowAncestor(contentPane);
+        				win2.dispose();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        };
+        comboBox.addActionListener(cbActionListener);
 		contentPane.add(comboBox);
 		
 		JComboBox comboBox_1 = new JComboBox();
@@ -117,7 +144,36 @@ public class PharmacyMainPage extends JFrame {
 		comboBox_1.setBounds(347, 292, 204, 48);
 		comboBox_1.setSelectedItem("Hospital Data");
 		comboBox_1.setEditable(false);
+		ActionListener cbActionListener1 = new ActionListener() {//add action listener to listen for change
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String s = (String) comboBox_1.getSelectedItem();//get the selected item
+
+                switch (s) {//check for a match
+                    case "Pharmacy Records":
+        				PharmacyRecordsPage frame1 = new PharmacyRecordsPage(pharmacy);
+        				frame1.setVisible(true);
+        				Window win1 = SwingUtilities.getWindowAncestor(contentPane);
+        				win1.dispose();
+                        break;
+                        
+                    case "Available Resources":
+        				HowToUsePage frame2 = new HowToUsePage(pharmacy);
+        				frame2.setVisible(true);
+        				Window win2 = SwingUtilities.getWindowAncestor(contentPane);
+        				win2.dispose();
+                        break;
+
+                        
+                    default:
+                        break;
+           
+                }
+            }
+        };
 		contentPane.add(comboBox_1);
+		comboBox_1.addActionListener(cbActionListener1);
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(HospitalMainPage.class.getResource("/icons/profilSon_150x150.png")));
@@ -135,6 +191,41 @@ public class PharmacyMainPage extends JFrame {
 		comboBox_2.setBounds(587, 292, 186, 48);
 		comboBox_2.setSelectedItem("My Account");
 		comboBox_2.setEditable(false);
+		ActionListener cbActionListener2 = new ActionListener() {//add action listener to listen for change
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String s = (String) comboBox_2.getSelectedItem();//get the selected item
+
+                switch (s) {//check for a match
+                    case "Change Password":
+        				ContactUsPage frame1 = new ContactUsPage(pharmacy);
+        				frame1.setVisible(true);
+        				Window win1 = SwingUtilities.getWindowAncestor(contentPane);
+        				win1.dispose();
+                        break;
+                        
+                    case "Change E-mail":
+        				HowToUsePage frame2 = new HowToUsePage(pharmacy);
+        				frame2.setVisible(true);
+        				Window win2 = SwingUtilities.getWindowAncestor(contentPane);
+        				win2.dispose();
+                        break;
+                        
+                    case "Account Details":
+        				AppInformationPage frame3 = new AppInformationPage(pharmacy);
+        				frame3.setVisible(true);
+        				Window win3 = SwingUtilities.getWindowAncestor(contentPane);
+        				win3.dispose();
+                        break;
+                        
+                    default:
+                        break;
+           
+                }
+            }
+        };
+        comboBox_2.addActionListener(cbActionListener2);
 		contentPane.add(comboBox_2);
 		
 		JComboBox comboBox_3 = new JComboBox();

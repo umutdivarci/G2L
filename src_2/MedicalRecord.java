@@ -38,7 +38,22 @@ public class MedicalRecord {
     public void setAge (int newAge) {
         age = newAge;
     }
-
+    
+    public String getMedicalCondition (int index) {
+    	return medicalConditions.get(index);
+    }
+    
+    public int getAge() {
+    	return age;
+    }
+    
+    public double getWeight() {
+    	return weight;
+    }
+    
+    public double getHeight() {
+    	return height;
+    }
     /**
      * This method sets the weight of the patient
      */
