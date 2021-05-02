@@ -8,9 +8,9 @@ class Patient extends Account {
     String name;
     String surname;
     Date date;
-    MedicalRecord diet;
+    MedicalRecord dietPlan;
 
-    Patient( String userName, String password, String mail, int identityNumber,  MedicalRecord medicalRecords,
+    Patient( String userName, String password, String mail, int identityNumber,
     String currentCity, String name, String surname){
 
         super(userName, password, mail);
@@ -20,7 +20,8 @@ class Patient extends Account {
         this.name = name;
         this.surname = surname;
         date = new Date();
-
+        medicalRecords = null;
+        dietPlan = null;
     }
 
     protected void setName(String newName){
