@@ -22,7 +22,7 @@ class Doctor extends Account{
         this.patients = patients;
         this.currentHospital = currentHospital;
         this.salary = salary;
-        patients = null;
+        patients = new ArrayList<String>();
     }
 
     // Methods
