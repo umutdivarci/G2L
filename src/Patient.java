@@ -2,14 +2,14 @@ import java.util.ArrayList;
 class Patient extends Account {
 
     //Variables specific to patient class
-    int identityNumber;
+    long identityNumber;
     MedicalRecord medicalRecords;
     String currentCity;
     String name;
     Date date;
     MedicalRecord dietPlan;
 
-    Patient( String userName, String password, String mail, int identityNumber,
+    Patient( String userName, String password, String mail, long identityNumber,
     String currentCity, String name){
 
         super(userName, password, mail);
@@ -25,12 +25,16 @@ class Patient extends Account {
     protected void setName(String newName){
         name = newName;
     }
+    
+    protected Date getDate() {
+    	return date;
+    }
 
     protected void setMedicalRecord(MedicalRecord newMedicalRecord){
         medicalRecords = newMedicalRecord;
     }
 
-    protected Integer getIdentityNo(){
+    protected Long getIdentityNo(){
         return identityNumber;
     }
 
@@ -51,7 +55,7 @@ class Patient extends Account {
     }
 
     protected String displayDietaryPlan(){
-        return diet.toString();
+        return dietPlan.toString();
     }
 
     protected boolean getAppointment(int date, Doctor doctor){

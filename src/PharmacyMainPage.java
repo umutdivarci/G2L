@@ -32,11 +32,13 @@ public class PharmacyMainPage extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PharmacyMainPage frame = new PharmacyMainPage();
+					PharmacyMainPage frame = new PharmacyMainPage(pharmacy);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,12 +46,13 @@ public class PharmacyMainPage extends JFrame {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the frame.
 	 */
-	public PharmacyMainPage() {
-		Account account = new Account( "umutdivarci", "12345", "umut@hotmail.com");
+	public PharmacyMainPage( Pharmacy pharmacy) {
+		//Account account = new Account( "umutdivarci", "12345", "umut@hotmail.com");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1133, 657);
@@ -153,21 +156,21 @@ public class PharmacyMainPage extends JFrame {
 
                 switch (s) {//check for a match
                     case "Contact Us":
-        				ContactUsPage frame1 = new ContactUsPage();
+        				ContactUsPage frame1 = new ContactUsPage(pharmacy);
         				frame1.setVisible(true);
         				Window win1 = SwingUtilities.getWindowAncestor(contentPane);
         				win1.dispose();
                         break;
                         
                     case "How to Use":
-        				HowToUsePage frame2 = new HowToUsePage();
+        				HowToUsePage frame2 = new HowToUsePage(pharmacy);
         				frame2.setVisible(true);
         				Window win2 = SwingUtilities.getWindowAncestor(contentPane);
         				win2.dispose();
                         break;
                         
                     case "App Information":
-        				AppInformationPage frame3 = new AppInformationPage();
+        				AppInformationPage frame3 = new AppInformationPage(pharmacy);
         				frame3.setVisible(true);
         				Window win3 = SwingUtilities.getWindowAncestor(contentPane);
         				win3.dispose();

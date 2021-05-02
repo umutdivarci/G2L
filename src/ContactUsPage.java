@@ -44,6 +44,8 @@ public class ContactUsPage extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -56,13 +58,14 @@ public class ContactUsPage extends JFrame {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the frame.
 	 */
-	public ContactUsPage() {
+	public ContactUsPage(Account account) {
 		// Sample account information.
-		Account account = new Account( "umutdivarci", "12345", "umut@hotmail.com");
+		//Account account = new Account( "umutdivarci", "12345", "umut@hotmail.com");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 669, 657);
@@ -80,10 +83,29 @@ public class ContactUsPage extends JFrame {
 		btnSignUpHere.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// If account type is patient, hospital or pharmacy return them to their related main page accordingly.
-				PatientMainPage frame = new PatientMainPage();
-				frame.setVisible(true);
-				Window win = SwingUtilities.getWindowAncestor(contentPane);
-				win.dispose();
+				if ( account instanceof Patient)
+				{
+					PatientMainPage frame = new PatientMainPage( (Patient) account);
+					frame.setVisible(true);
+					Window win = SwingUtilities.getWindowAncestor(contentPane);
+					win.dispose();
+				}
+				
+				if ( account instanceof Hospital)
+				{
+					HospitalMainPage frame = new HospitalMainPage( (Hospital) account);
+					frame.setVisible(true);
+					Window win = SwingUtilities.getWindowAncestor(contentPane);
+					win.dispose();
+				}
+				
+				if ( account instanceof Pharmacy)
+				{
+					PharmacyMainPage frame = new PharmacyMainPage( (Pharmacy) account);
+					frame.setVisible(true);
+					Window win = SwingUtilities.getWindowAncestor(contentPane);
+					win.dispose();
+				}
 			}
 		});
 		btnSignUpHere.setOpaque(false);
@@ -166,7 +188,8 @@ public class ContactUsPage extends JFrame {
 		txtrDevelopersUmutDivarc.setCaretColor(Color.WHITE);
 		txtrDevelopersUmutDivarc.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		txtrDevelopersUmutDivarc.setForeground(Color.WHITE);
-		txtrDevelopersUmutDivarc.setText("   We're 4 freshman computer science students in \r\nBilkent University. Health Tracker is demo of an app\r\n        we've designed for our university project.");
+		txtrDevelopersUmutDivarc.setText("   We're 4 freshman computer science students in \r\nBilkent University. Health Tracker is demo"
+		+ " of an app\r\n        we've designed for our university project.");
 		txtrDevelopersUmutDivarc.setFont(new Font("Tahoma", Font.BOLD, 13));
 		txtrDevelopersUmutDivarc.setBounds(153, 144, 344, 94);
 		contentPane.add(txtrDevelopersUmutDivarc);

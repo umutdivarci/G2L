@@ -9,7 +9,7 @@ public class Day {
         Day(int x){
             whichDay = x;
             available = true;
-            note = "";
+            note = " is available.";
     
         }
     
@@ -17,7 +17,7 @@ public class Day {
          *@OVERWRITE toString
          */
         public String toString() {
-            return "April " + whichDay;
+            return " April " + whichDay + note;
         }
 
         public String getNote(){
@@ -28,14 +28,19 @@ public class Day {
         protected void setNote(int x){
             if(x == 0){
 
-                note = " has booked";
+                note = " has been booked.";
             }
 
             if (x == 1) {
                 
-                note = " has an appointment";
+                note = " has an appointment.";
             }
         
+        }
+        
+        // overLoad
+        protected void setNote (String s) {
+        	note = s;
         }
 
         //to check availability
@@ -46,7 +51,21 @@ public class Day {
         protected void setAvailabilityFalse(){
 
             available = false;
+            setNote(0);
         }
+        //Overload methods
+        protected void setAvailabilityFalse( int i){
+
+            available = false;
+            setNote(i);
+        }
+        
+        protected void setAvailabilityFalse( String s){
+
+            available = false;
+            setNote(s);
+        }
+
 
         protected void setAvailabilityTrue(){
 

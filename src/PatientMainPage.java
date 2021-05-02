@@ -32,6 +32,8 @@ public class PatientMainPage extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -44,11 +46,12 @@ public class PatientMainPage extends JFrame {
 			}
 		});
 	}
-
+	*/
+	
 	/**
 	 * Create the frame.
 	 */
-	public PatientMainPage() {
+	public PatientMainPage(Patient patient) {
 		Account account = new Account( "umutdivarci", "12345", "umut@hotmail.com");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -111,35 +114,35 @@ public class PatientMainPage extends JFrame {
 
                 switch (s) {//check for a match
                     case "Health Tracker":
-        				SignUpPage frame1 = new SignUpPage();
+        				HealthTrackerPage frame1 = new HealthTrackerPage(patient);
         				frame1.setVisible(true);
         				Window win1 = SwingUtilities.getWindowAncestor(contentPane);
         				win1.dispose();
                         break;
                         
                     case "My Medical Records":
-        				SignUpPage frame2 = new SignUpPage();
+        				PatientSignUpPage frame2 = new PatientSignUpPage();
         				frame2.setVisible(true);
         				Window win2 = SwingUtilities.getWindowAncestor(contentPane);
         				win2.dispose();
                         break;
                         
                     case "Quarantine Status":
-        				SignUpPage frame3 = new SignUpPage();
+        				PatientSignUpPage frame3 = new PatientSignUpPage();
         				frame3.setVisible(true);
         				Window win3 = SwingUtilities.getWindowAncestor(contentPane);
         				win3.dispose();
                         break;
                         
                     case "My Dietary Plan":
-        				SignUpPage frame4 = new SignUpPage();
+        				PatientSignUpPage frame4 = new PatientSignUpPage();
         				frame4.setVisible(true);
         				Window win4 = SwingUtilities.getWindowAncestor(contentPane);
         				win4.dispose();
                         break;
                         
                     case "My Exercise Plan":
-        				SignUpPage frame5 = new SignUpPage();
+        				PatientSignUpPage frame5 = new PatientSignUpPage();
         				frame5.setVisible(true);
         				Window win5 = SwingUtilities.getWindowAncestor(contentPane);
         				win5.dispose();
@@ -174,35 +177,35 @@ public class PatientMainPage extends JFrame {
 
                 switch (s) {//check for a match
                     case "Ankara Hospital":
-        				SignUpPage frame1 = new SignUpPage();
+        				PatientSignUpPage frame1 = new PatientSignUpPage();
         				frame1.setVisible(true);
         				Window win1 = SwingUtilities.getWindowAncestor(contentPane);
         				win1.dispose();
                         break;
                         
                     case "Liv Hospital":
-        				SignUpPage frame2 = new SignUpPage();
+        				PatientSignUpPage frame2 = new PatientSignUpPage();
         				frame2.setVisible(true);
         				Window win2 = SwingUtilities.getWindowAncestor(contentPane);
         				win2.dispose();
                         break;
                         
                     case "Bilkent Health Center":
-        				SignUpPage frame3 = new SignUpPage();
+        				PatientSignUpPage frame3 = new PatientSignUpPage();
         				frame3.setVisible(true);
         				Window win3 = SwingUtilities.getWindowAncestor(contentPane);
         				win3.dispose();
                         break;
                         
                     case "Can Pharmacy":
-        				SignUpPage frame4 = new SignUpPage();
+        				PatientSignUpPage frame4 = new PatientSignUpPage();
         				frame4.setVisible(true);
         				Window win4 = SwingUtilities.getWindowAncestor(contentPane);
         				win4.dispose();
                         break;
                         
                     case "Umut Drug Store":
-        				SignUpPage frame5 = new SignUpPage();
+        				PatientSignUpPage frame5 = new PatientSignUpPage();
         				frame5.setVisible(true);
         				Window win5 = SwingUtilities.getWindowAncestor(contentPane);
         				win5.dispose();
@@ -242,21 +245,21 @@ public class PatientMainPage extends JFrame {
 
                 switch (s) {//check for a match
                     case "Change Password":
-        				SignUpPage frame1 = new SignUpPage();
+        				PatientSignUpPage frame1 = new PatientSignUpPage();
         				frame1.setVisible(true);
         				Window win1 = SwingUtilities.getWindowAncestor(contentPane);
         				win1.dispose();
                         break;
                         
                     case "Change E-mail":
-        				SignUpPage frame2 = new SignUpPage();
+        				PatientSignUpPage frame2 = new PatientSignUpPage();
         				frame2.setVisible(true);
         				Window win2 = SwingUtilities.getWindowAncestor(contentPane);
         				win2.dispose();
                         break;
                         
                     case "Account Details":
-        				SignUpPage frame3 = new SignUpPage();
+        				PatientSignUpPage frame3 = new PatientSignUpPage();
         				frame3.setVisible(true);
         				Window win3 = SwingUtilities.getWindowAncestor(contentPane);
         				win3.dispose();
@@ -290,21 +293,21 @@ public class PatientMainPage extends JFrame {
 
                 switch (s) {//check for a match
                     case "Contact Us":
-        				ContactUsPage frame1 = new ContactUsPage();
+        				ContactUsPage frame1 = new ContactUsPage(patient);
         				frame1.setVisible(true);
         				Window win1 = SwingUtilities.getWindowAncestor(contentPane);
         				win1.dispose();
                         break;
                         
                     case "How to Use":
-        				HowToUsePage frame2 = new HowToUsePage();
+        				HowToUsePage frame2 = new HowToUsePage(patient);
         				frame2.setVisible(true);
         				Window win2 = SwingUtilities.getWindowAncestor(contentPane);
         				win2.dispose();
                         break;
                         
                     case "App Information":
-        				AppInformationPage frame3 = new AppInformationPage();
+        				AppInformationPage frame3 = new AppInformationPage(patient);
         				frame3.setVisible(true);
         				Window win3 = SwingUtilities.getWindowAncestor(contentPane);
         				win3.dispose();
@@ -325,7 +328,7 @@ public class PatientMainPage extends JFrame {
 		txtUmutDivarc.setForeground(Color.WHITE);
 		txtUmutDivarc.setOpaque(false);
 		txtUmutDivarc.setEditable(false);
-		txtUmutDivarc.setText("Umut Divarc\u0131");
+		txtUmutDivarc.setText(patient.getName());
 		txtUmutDivarc.setBounds(265, 139, 158, 38);
 		contentPane.add(txtUmutDivarc);
 		txtUmutDivarc.setColumns(10);

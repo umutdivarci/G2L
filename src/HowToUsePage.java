@@ -44,6 +44,8 @@ public class HowToUsePage extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -56,13 +58,13 @@ public class HowToUsePage extends JFrame {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the frame.
 	 */
-	public HowToUsePage() {
+	public HowToUsePage(Account account) {
 		// Sample account information.
-		Account account = new Account( "umutdivarci", "12345", "umut@hotmail.com");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 669, 657);
@@ -80,10 +82,29 @@ public class HowToUsePage extends JFrame {
 		btnSignUpHere.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// If account type is patient, hospital or pharmacy return them to their related main page accordingly.
-				PatientMainPage frame = new PatientMainPage();
-				frame.setVisible(true);
-				Window win = SwingUtilities.getWindowAncestor(contentPane);
-				win.dispose();
+				if ( account instanceof Patient)
+				{
+					PatientMainPage frame = new PatientMainPage( (Patient) account);
+					frame.setVisible(true);
+					Window win = SwingUtilities.getWindowAncestor(contentPane);
+					win.dispose();
+				}
+				
+				if ( account instanceof Hospital)
+				{
+					HospitalMainPage frame = new HospitalMainPage( (Hospital) account);
+					frame.setVisible(true);
+					Window win = SwingUtilities.getWindowAncestor(contentPane);
+					win.dispose();
+				}
+				
+				if ( account instanceof Pharmacy)
+				{
+					PharmacyMainPage frame = new PharmacyMainPage( (Pharmacy) account);
+					frame.setVisible(true);
+					Window win = SwingUtilities.getWindowAncestor(contentPane);
+					win.dispose();
+				}
 			}
 		});
 		btnSignUpHere.setOpaque(false);
@@ -160,7 +181,15 @@ public class HowToUsePage extends JFrame {
 		txtrDevelopersUmutDivarc.setCaretColor(Color.WHITE);
 		txtrDevelopersUmutDivarc.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		txtrDevelopersUmutDivarc.setForeground(Color.WHITE);
-		txtrDevelopersUmutDivarc.setText("After you log in to you account, you will be directed to your assigned main\r\npage. Under your main page, there are 4 main tabs with unique functions\r\nthat links you to different pages.\r\n\r\nIf you are using a patient account you can access your medical records \r\nunder the first tab, which displays a calendar, a quarantine tracker and\r\ndietary/exercise plan generator.\r\n\r\nIf you are using a pharmacy/hospital account, you can access and edit\r\nyour employees' data under the first tab. You can also access related\r\nhealth instutiton's data under second tab.\r\n\r\nUnder the third tab, you can access and edit your account information.\r\n\r\nUnder the fourth tab, you can learn more about Health Tracker!\r\n\r\nStay healthy, be safe.");
+		txtrDevelopersUmutDivarc.setText("After you log in to you account, you will be directed to your assigned"
+				+ " main\r\npage. Under your main page, there are 4 main tabs with unique functions"
+				+ "\r\nthat links you to different pages.\r\n\r\nIf you are using a patient account"
+				+ " you can access your medical records \r\nunder the first tab, which displays a calendar,"
+				+ " a quarantine tracker and\r\ndietary/exercise plan generator.\r\n\r\nIf you are using a"
+				+ " pharmacy/hospital account, you can access and edit\r\nyour employees' data under the first tab."
+				+ " You can also access related\r\nhealth instutiton's data under second tab.\r\n\r\nUnder"
+				+ " the third tab, you can access and edit your account information.\r\n\r\nUnder the fourth tab,"
+				+ " you can learn more about Health Tracker!\r\n\r\nStay healthy, be safe.");
 		txtrDevelopersUmutDivarc.setFont(new Font("Tahoma", Font.BOLD, 13));
 		txtrDevelopersUmutDivarc.setBounds(91, 191, 485, 261);
 		contentPane.add(txtrDevelopersUmutDivarc);

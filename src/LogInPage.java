@@ -63,7 +63,7 @@ public class LogInPage extends JFrame {
 	 */
 	public LogInPage() {
 		// Sample account information.
-		Account account = new Account( "umutdivarci", "12345", "umut@hotmail.com");
+		Patient patient = new Patient( "umutdivarci", "12345", "umut@hotmail.com", 123341, "Ankara", "Umut Divarcý");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 669, 657);
@@ -85,11 +85,16 @@ public class LogInPage extends JFrame {
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.setBackground(new Color(34, 139, 34));
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if ( frmtdtxtfldEnterUsernameHere.getText().equals(account.userName) && passwordField_1.getText().equals(account.password))
+				
+				//Access the related account TODO
+
+				if ( frmtdtxtfldEnterUsernameHere.getText().equals(patient.userName) && passwordField_1.getText().equals(patient.password) && 
+						patient instanceof Patient)
 				{
-					PatientMainPage frame = new PatientMainPage(); //add account parameter
+					PatientMainPage frame = new PatientMainPage( patient); //add account parameter
 					frame.setVisible(true);
 					Window win = SwingUtilities.getWindowAncestor(contentPane);
 					win.dispose();
@@ -150,7 +155,7 @@ public class LogInPage extends JFrame {
 		btnSignUpHere.setBorder(null);
 		btnSignUpHere.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				SignUpPage frame = new SignUpPage();
+				PatientSignUpPage frame = new PatientSignUpPage();
 				frame.setVisible(true);
 				Window win = SwingUtilities.getWindowAncestor(contentPane);
 				win.dispose();

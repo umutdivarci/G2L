@@ -14,13 +14,13 @@ public class MedicalRecord {
     int age;
     double weight;
     double height;
-    Date dateOfBirth;
+    Day dateOfBirth;
     ArrayList<String> currentMedicines;
     ArrayList<String> medicalConditions;
     ArrayList<Date> scheduledAppointments;
     
     //constructor
-    public MedicalRecord (int currentAge, double currentWeight, double currentHeight, Date currentDateOfBirth) {
+    public MedicalRecord (int currentAge, double currentWeight, double currentHeight, Day currentDateOfBirth) {
         age = currentAge;
         weight = currentWeight;
         height = currentHeight;
@@ -56,7 +56,7 @@ public class MedicalRecord {
     /**
      * This method sets the date of birth of the patient
      */
-    public void setDateOfBirth (Date newDateOfBirth) {
+    public void setDateOfBirth (Day newDateOfBirth) {
         dateOfBirth = newDateOfBirth;
     }
 

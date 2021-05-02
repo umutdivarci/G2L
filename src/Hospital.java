@@ -34,7 +34,7 @@ public class Hospital extends Account
         doctors = new ArrayList<Employee>();
         nurses = new ArrayList<Employee>();
         secretaries = new ArrayList<Employee>();
-        otherEmployees = new ArrayList<String>();
+        otherEmployees = new ArrayList<Employee>();
         hospitalRecords = new ArrayList<String>();
         availableResources = new ArrayList<String>();
         currentPatients = new ArrayList<String>();
@@ -54,4 +54,11 @@ public class Hospital extends Account
     public void saveAppointment()
     {   
     }   
+    
+    @Override
+    public String toString()
+    {
+    	return hospitalName;
+    }
+    
 }
