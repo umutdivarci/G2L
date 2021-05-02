@@ -6,19 +6,17 @@ class Patient extends Account {
     MedicalRecord medicalRecords;
     String currentCity;
     String name;
-    String surname;
     Date date;
     MedicalRecord dietPlan;
 
     Patient( String userName, String password, String mail, int identityNumber,
-    String currentCity, String name, String surname){
+    String currentCity, String name){
 
         super(userName, password, mail);
         this.identityNumber = identityNumber;
         this.medicalRecords = medicalRecords;
         this.currentCity = currentCity;
         this.name = name;
-        this.surname = surname;
         date = new Date();
         medicalRecords = null;
         dietPlan = null;
@@ -46,10 +44,6 @@ class Patient extends Account {
 
     protected String getName(){
         return name;
-    }
-
-    protected String getSurname(){
-        return surname;
     }
 
     protected void generateDietaryProgram(MedicalRecord record){
