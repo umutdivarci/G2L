@@ -17,14 +17,13 @@ public class Pharmacy extends Account {
     ArrayList<Medicine> medicalStock;
 
     // Constructors
-    Pharmacy ( String userName, String password, String mail, String name, String city, ArrayList<Employee> employees,
-    ArrayList<Medicine> medicalStock) 
+    Pharmacy ( String userName, String password, String mail, String name, String city) 
     {
         super ( userName, password, mail);
         this.name = name;
         this.city = city;
-        this.employees = employees;
-        this.medicalStock = medicalStock;
+        this.employees = new ArrayList<Employee>();
+        this.medicalStock = new ArrayList<Medicine>();
     }
 
     // Methods
