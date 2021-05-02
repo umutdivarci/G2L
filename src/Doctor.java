@@ -6,7 +6,7 @@ class Doctor extends Account{
     // Properties
     final String name;
     final long identityNumber;
-    ArrayList<Patient> patients;
+    ArrayList<String> patients;
     Date schedule;
     Hospital currentHospital;
     double salary;
@@ -22,6 +22,7 @@ class Doctor extends Account{
         this.patients = patients;
         this.currentHospital = currentHospital;
         this.salary = salary;
+        patients = null;
     }
 
     // Methods
@@ -61,7 +62,7 @@ class Doctor extends Account{
         return schedule;
     }
 
-    protected ArrayList<Patient> getCurrentPatients()
+    protected ArrayList<String> getCurrentPatients()
     {
         return patients;
     }
