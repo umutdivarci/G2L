@@ -6,16 +6,14 @@ public class DietPlan {
     double weight;
     double targetWeight;
     double targetCaloriesPerDay;
-    ArrayList<String> foodEatenList;
-    ArrayList<Double> caloricIntakeList;
+    ArrayList<String> foodsSuggestedList;
 
     //constructor
     public DietPlan (double currentWeight, double currentTargetWeight, double currentTargetCaloriesPerDay) {
         weight = currentWeight;
         targetWeight = currentTargetWeight;
         targetCaloriesPerDay = currentTargetCaloriesPerDay;
-        foodEatenList = new ArrayList<String>();
-        caloricIntakeList = new ArrayList<Double>();
+        foodsSuggestedList = new ArrayList<String>();
     }
 
     //methods
@@ -31,12 +29,8 @@ public class DietPlan {
         return targetCaloriesPerDay;
     }
 
-    public ArrayList<String> getFoodEatenList() {
-        return foodEatenList;
-    }
-
-    public ArrayList<Double> getcaloricIntakeList() {
-        return caloricIntakeList;
+    public ArrayList<String> getFoodsSuggestedList() {
+        return foodsSuggestedList;
     }
 
     public void setWeight(double newWeight) {
@@ -49,32 +43,5 @@ public class DietPlan {
 
     public void setTargetCaloriesPerDay (double newTargetCaloriesPerDay) {
         targetCaloriesPerDay = newTargetCaloriesPerDay;
-    }
-
-    public void addFoodAndCalories (String foodEaten, double caloricIntake) {
-        foodEatenList.add(foodEaten);
-        caloricIntakeList.add(caloricIntake);
-    }
-
-    public void removeFoodAndCalories (int index) {
-        foodEatenList.remove(index);
-        caloricIntakeList.remove(index);
-    }
-    
-    public String printFoodAndCalories {
-        String foodAndCalories = "";
-        for (int i = 0; i < foodEatenList.size(); i++)
-        {
-            foodAndCalories += (i + 1) + "      ";
-            foodAndCalories += foodEatenList.get(i) + "      ";
-            foodAndCalories += caloricIntakeList.get(i) + \n;
-        }
-        return foodAndCalories;
-        
-            
-
-    public void resetLists () {
-        foodEatenList = new ArrayList<String>();
-        caloricIntakeList = new ArrayList<Double>();
-    }  
+    }       
 }
