@@ -60,6 +60,18 @@ public class DietPlan {
         foodEatenList.remove(index);
         caloricIntakeList.remove(index);
     }
+    
+    public String printFoodAndCalories {
+        String foodAndCalories = "";
+        for (int i = 0; i < foodEatenList.size(); i++)
+        {
+            foodAndCalories += (i + 1) + "      ";
+            foodAndCalories += foodEatenList.get(i) + "      ";
+            foodAndCalories += caloricIntakeList.get(i) + \n;
+        }
+        return foodAndCalories;
+        
+            
 
     public void resetLists () {
         foodEatenList = new ArrayList<String>();
