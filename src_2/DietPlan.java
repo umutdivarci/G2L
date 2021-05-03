@@ -3,15 +3,11 @@ import java.util.ArrayList;
 public class DietPlan {
 
     //instane variables
-    double weight;
-    double targetWeight;
     double targetCaloriesPerDay;
     ArrayList<String> foodsSuggestedList;
 
     //constructor
-    public DietPlan (double currentWeight, double currentTargetWeight, double currentTargetCaloriesPerDay) {
-        weight = currentWeight;
-        targetWeight = currentTargetWeight;
+    public DietPlan (double currentTargetCaloriesPerDay) {
         targetCaloriesPerDay = currentTargetCaloriesPerDay;
         foodsSuggestedList = new ArrayList<String>();
     }
