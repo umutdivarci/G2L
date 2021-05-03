@@ -116,4 +116,14 @@ public class MedicalRecord {
     public void removeAppointment (int index) {
         scheduledAppointments.remove(index);
     }
+    
+    public DietPlan createDietPlan() {
+        double patientBMR;
+        double targetCalories;
+        DietPlan patientDietPlan;
+        patientBMR = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+        targetCalories = patientBMR * 1.3;
+        patientDietPlan = new DietPlan(targetCalories);
+        return patientDietPlan;
+    }
 }
