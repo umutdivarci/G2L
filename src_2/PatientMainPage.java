@@ -170,6 +170,9 @@ public class PatientMainPage extends JFrame {
 		comboBox_1.setBounds(347, 292, 204, 48);
 		comboBox_1.setSelectedItem("Nearby Health Centers");
 		comboBox_1.setEditable(false);
+
+		LogInPage a = new LogInPage();
+		
 		
         ActionListener cbActionListener1 = new ActionListener() {//add actionlistner to listen for change
             @Override
@@ -179,7 +182,7 @@ public class PatientMainPage extends JFrame {
 
                 switch (s) {//check for a match
                     case "Ankara Hospital":
-        				PatientSignUpPage frame1 = new PatientSignUpPage();
+        				AppointmentPage frame1 = new AppointmentPage( a.hospital, patient);
         				frame1.setVisible(true);
         				Window win1 = SwingUtilities.getWindowAncestor(contentPane);
         				win1.dispose();

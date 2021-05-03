@@ -47,7 +47,15 @@ public class Hospital extends Account
     public void makeAppointment()
     {   
     }
-    
+
+    public int getDoctorNum(){
+        return doctors.size();
+    }
+
+    public Doctor getDoctor(int i){
+
+        return doctors.get(i);
+    }
      /**
      * Method which saves an appointment with an available doctor at an available branch
     */

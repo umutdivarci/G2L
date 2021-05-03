@@ -36,6 +36,23 @@ public class LogInPage extends JFrame {
 	private JLabel lblNewLabel_1_1;
 	private JLabel lblNewLabel_2;
 	private JTextField txtLogIn;
+	public Hospital hospital = new Hospital ( "hospital", "12345", "patient@hotmail.com", "Ankara Hospital", "Ankara");
+		
+	Doctor doctor1 = new Doctor("doctor1", "12345", "doctor@hotmail.com", "Umut Divarci", 22002116, hospital);
+	Doctor doctor2 = new Doctor("doctor2", "12345", "doctor@hotmail.com", "Alphan Eker", 22002116, hospital);
+	Doctor doctor3 = new Doctor("doctor3", "12345", "doctor@hotmail.com", "Faaiz Khan", 22002116, hospital);
+	
+	Employee nurse1 = new Employee("Arda Yildiz", "Nurse", "Hacettepe University", 25);
+	Employee nurse2 = new Employee("Aynur Dayanik", "Nurse", "Bilkent University", 35);
+	
+	Employee secretary1 = new Employee("Idil Dal", "Secretary", "Koc University", 22);
+	Employee secretary2 = new Employee("Ekin Ates", "Secretary", "METU", 24);
+	Day day = new Day(28);
+	Patient patient = new Patient( "patient", "12345", "patient@hotmail.com", 123341, "Ankara", "Umut Divarcï¿½");
+	MedicalRecord medicalRecord = new MedicalRecord (22, 120.0, 1.80, day);
+	Pharmacy pharmacy = new Pharmacy ("pharmacy", "12345", "pharmacy@hotmail.com", "Bilkent Pharmacy", "Ankara");
+	
+	
 	/**
 	 * @wbp.nonvisual location=12,704
 	 */
@@ -49,6 +66,7 @@ public class LogInPage extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+
 					LogInPage frame = new LogInPage();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -63,18 +81,6 @@ public class LogInPage extends JFrame {
 	 */
 	public LogInPage() {
 		// Sample account informations.
-		Hospital hospital = new Hospital ( "hospital", "12345", "patient@hotmail.com", "Ankara Hospital", "Ankara");
-		
-		Doctor doctor1 = new Doctor("doctor1", "12345", "doctor@hotmail.com", "Umut Divarci", 22002116, hospital);
-		Doctor doctor2 = new Doctor("doctor2", "12345", "doctor@hotmail.com", "Alphan Eker", 22002116, hospital);
-		Doctor doctor3 = new Doctor("doctor3", "12345", "doctor@hotmail.com", "Faaiz Khan", 22002116, hospital);
-		
-		Employee nurse1 = new Employee("Arda Yildiz", "Nurse", "Hacettepe University", 25);
-		Employee nurse2 = new Employee("Aynur Dayanik", "Nurse", "Bilkent University", 35);
-		
-		Employee secretary1 = new Employee("Idil Dal", "Secretary", "Koc University", 22);
-		Employee secretary2 = new Employee("Ekin Ates", "Secretary", "METU", 24);
-		
 		hospital.doctors.add(doctor1);
 		hospital.doctors.add(doctor2);
 		hospital.doctors.add(doctor3);
@@ -85,10 +91,6 @@ public class LogInPage extends JFrame {
 		
 		hospital.secretaries.add(secretary1);
 		hospital.secretaries.add(secretary2);
-		
-		Day day = new Day(28);
-		Patient patient = new Patient( "patient", "12345", "patient@hotmail.com", 123341, "Ankara", "Umut Divarcý");
-		MedicalRecord medicalRecord = new MedicalRecord (22, 120.0, 1.80, day);
 		medicalRecord.addCondition("Type 2 Diabetes");
 		medicalRecord.addCondition("Overweight");
 		medicalRecord.addCondition("Astigmatism");
@@ -97,9 +99,6 @@ public class LogInPage extends JFrame {
 		patient.getAppointment(7, doctor1, "Appointment with doctor " + doctor1.getName());
 		patient.getAppointment(17, doctor2);
 		patient.getDate().getDay(25).setAvailabilityFalse();
-		
-		
-		Pharmacy pharmacy = new Pharmacy ("pharmacy", "12345", "pharmacy@hotmail.com", "Bilkent Pharmacy", "Ankara");
 		pharmacy.employees.add(secretary1);
 		pharmacy.employees.add(secretary2);
 		
@@ -290,5 +289,12 @@ public class LogInPage extends JFrame {
 		txtIncorrectUser.setBackground(Color.BLACK);
 		txtIncorrectUser.setBounds(223, 288, 232, 19);
 		contentPane.add(txtIncorrectUser);
+		
 	}
+
+	public Hospital getHospital(){
+		return hospital;
+	}
+
+	
 }
